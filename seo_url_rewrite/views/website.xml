@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Seo Configuration from website settings -->
+<record id="website_seo_url_rewrite_form" model="ir.ui.view">
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='default_lang_id']" position="after">
+            	<field name="is_allow_url_rewrite"/>
+            </xpath>
+        </field>
+</record>
+</odoo>

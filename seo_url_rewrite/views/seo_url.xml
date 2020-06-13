@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<!-- Tree view for Seo Url -->
+    <record id="seo_url_tree" model="ir.ui.view">
+        <field name="name">Seo Url</field>
+        <field name="model">seo.url</field>
+        <field name="arch" type="xml">
+            <tree create="false" editable="bottom" delete="false">
+            	<field name="product_id" readonly="1" attrs="{'invisible': [('product_id','=', [] )]}"/>               
+                <field name="categ_id" readonly="1" attrs="{'invisible': [('categ_id','=', [] )]}"/>
+                <field name="website_id" readonly="1"/>                               
+                <field name="url"/>                
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+	 <!-- Related action for following menuitem -->
+     <record id="seo_url_action" model="ir.actions.act_window">
+        <field name="name">Seo Url</field>
+        <field name="res_model">seo.url</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="seo_url_tree"/>
+    </record>
+	     
+	<!-- Seo Url menuitem in website configuration menu -->      
+    <menuitem id="menu_seo_url_ept" name="Seo Url"
+    	action="seo_urlrewrite_ept.seo_url_action"
+        parent="website.menu_website_global_configuration"
+        sequence="25"/>                    
+</odoo>

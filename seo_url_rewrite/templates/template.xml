@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="meta_layout_assets_frontend" inherit_id="web.layout">
+		<xpath expr="//head" position="inside">
+			<meta name="robots" content="noindex, nofollow" />
+			<t t-set="path" t-value="request.httprequest.full_path.split('?')" />
+            <t t-if="path">
+              <link rel="canonical" t-att-href="'%s'%(path[0])" />
+            </t>
+		</xpath>
+	</template>
+</odoo>
+		

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_seo_url_for_admin_user,seo.url.ept,model_seo_url,base.group_system,1,1,1,
+access_seo_url_for_public,seo.url.ept,model_seo_url,,1,0,0,0
+access_seo_url_for_editorDesigner,seo.url.ept,model_seo_url,website.group_website_designer,1,1,1,1
